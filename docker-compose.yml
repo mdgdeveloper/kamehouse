@@ -20,12 +20,12 @@ services:
       - SPAWN_MONSTERS=${MC_SPAWN_MONSTERS:-true}
       - SPAWN_NPCS=${MC_SPAWN_NPCS:-true}
       - GENERATE_STRUCTURES=${MC_GENERATE_STRUCTURES:-true}
-      - VIEW_DISTANCE=${MC_VIEW_DISTANCE:-10}
+      - VIEW_DISTANCE=${MC_VIEW_DISTANCE:-20}
       - MODE=${MC_GAMEMODE:-survival}
-      - MOTD=${MC_MOTD:-"Welcome to Minecraft Server"}
+      - MOTD=${MC_MOTD:-"§6§lBenvinguts §e§lal §9§lmón §a§ld'en §b§lFullet §5§lTortuga"}
       - PVP=${MC_PVP:-true}
       - ONLINE_MODE=${MC_ONLINE_MODE:-true}
-      - MAX_PLAYERS=${MC_MAX_PLAYERS:-20}
+      - MAX_PLAYERS=${MC_MAX_PLAYERS:-10}
       - SEED=${MC_SEED:-}
       - OPS=${MC_OPS:-}
       - ICON=${MC_ICON:-/icon/server-icon.png}
