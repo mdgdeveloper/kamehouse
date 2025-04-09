@@ -1,0 +1,43 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server:latest
+    container_name: minecraft_server
+    ports:
+      - "${MC_PORT:-25565}:25565"
+    volumes:
+      - ./minecraft-data:/data
+      - ./server.properties:/data/server.properties:ro
+      - ./server-icon.png:/icon/server-icon.png:ro
+    environment:
+      - EULA=TRUE
+      - TYPE=${MC_TYPE:-VANILLA}
+      - VERSION=${MC_VERSION:-LATEST}
+      - MEMORY=${MC_MEMORY:-2G}
+      - DIFFICULTY=${MC_DIFFICULTY:-normal}
+      - LEVEL_TYPE=${MC_LEVEL_TYPE:-DEFAULT}
+      - ALLOW_NETHER=${MC_ALLOW_NETHER:-true}
+      - ENABLE_COMMAND_BLOCK=${MC_ENABLE_COMMAND_BLOCK:-false}
+      - SPAWN_ANIMALS=${MC_SPAWN_ANIMALS:-true}
+      - SPAWN_MONSTERS=${MC_SPAWN_MONSTERS:-true}
+      - SPAWN_NPCS=${MC_SPAWN_NPCS:-true}
+      - GENERATE_STRUCTURES=${MC_GENERATE_STRUCTURES:-true}
+      - VIEW_DISTANCE=${MC_VIEW_DISTANCE:-10}
+      - MODE=${MC_GAMEMODE:-survival}
+      - MOTD=${MC_MOTD:-"Welcome to Minecraft Server"}
+      - PVP=${MC_PVP:-true}
+      - ONLINE_MODE=${MC_ONLINE_MODE:-true}
+      - MAX_PLAYERS=${MC_MAX_PLAYERS:-20}
+      - SEED=${MC_SEED:-}
+      - OPS=${MC_OPS:-}
+      - WHITELIST=${MC_WHITELIST:-}
+      - ICON=/icon/server-icon.png
+      - MAX_WORLD_SIZE=${MC_MAX_WORLD_SIZE:-10000}
+      - ALLOW_FLIGHT=${MC_ALLOW_FLIGHT:-false}
+      - MAX_BUILD_HEIGHT=${MC_MAX_BUILD_HEIGHT:-256}
+      - SERVER_NAME=${MC_SERVER_NAME:-Minecraft Server}
+      - FORCE_GAMEMODE=${MC_FORCE_GAMEMODE:-false}
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    env_file:
+      - minecraft.env
