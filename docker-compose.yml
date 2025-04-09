@@ -29,7 +29,6 @@ services:
       - SEED=${MC_SEED:-}
       - OPS=${MC_OPS:-}
       - WHITELIST=${MC_WHITELIST:-}
-      - ICON=/icon/server-icon.png
       - MAX_WORLD_SIZE=${MC_MAX_WORLD_SIZE:-10000}
       - ALLOW_FLIGHT=${MC_ALLOW_FLIGHT:-false}
       - MAX_BUILD_HEIGHT=${MC_MAX_BUILD_HEIGHT:-256}
